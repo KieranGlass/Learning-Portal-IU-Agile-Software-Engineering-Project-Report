@@ -3,10 +3,11 @@ import ProfileCard from './ProfileCard';
 
 function StudentProfile() {
   const studentData = {
-    image: 'public/logo192.png',
-    name: 'John Doe',
+    image: 'Ron.jpg',
+    name: 'Ronald Weasley',
     role: 'Student',
-    bio: 'First year computer science major'
+    bio: 'Second Year Student',
+    house: 'Gryffindor'
   };
 
   return (

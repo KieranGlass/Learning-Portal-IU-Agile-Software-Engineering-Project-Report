@@ -1,12 +1,17 @@
 import React from 'react';
 import StudentProfile from './StudentProfile';
 
-function Student() {
+function Student({ setShowProfile, setSelectedRole }) {
+  React.useEffect(() => {
+    setShowProfile(true);
+    setSelectedRole('Student');
+  }, []);
+
   return (
     <div>
-      <h1>Student</h1>
       <StudentProfile />
     </div>
   );
 }
+
 export default Student;

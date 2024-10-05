@@ -1,25 +1,37 @@
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #751807;
+  height: 15vh; /* Changed from min-height: 100vh to 25vh */
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  font-size: calc(8px + 1.5vmin); /* Reduced slightly for smaller header */
+  color: #FFAB0D;
+  font-family: 'Arial, sans-serif';
 }
 
-.nav-link {
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
+.header-content {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Push the content to the left */
+}
+
+.header-content button {
+  margin-left: 10vh;
+  margin-right: 62vh;
+}
+
+.header-content img {
+  background-color: #751807;
+  color: #751807;
+  margin-left: 10vh;
 }
 
 .profile-card {
+  background-color: #ffffff;
   border: 1px solid #ccc;
   padding: 20px;
-  margin: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-right: auto; /* Pushes the card to the left */
 }
 
 .profile-image {
@@ -27,4 +39,139 @@
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.main-content {
+  background-color: #6F6C78;
+  display: flex;
+  flex-direction: column; /* Change to column for better stacking inside */
+  justify-content: center;
+  align-items: center; /* Ensure content is centered */
+  min-height: 85vh;
+}
+
+
+/* Style the container for the radio buttons */
+/* Login form container */
+.login-container {
+  display: flex;
+  flex-direction: column; /* Keeps radio buttons, form, and button stacked vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%; /* Ensures it doesn't stretch too much */
+  border: 2px solid #ccc;
+}
+
+/* Radio group container */
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px; /* Adds space between the radio buttons and the login form */
+}
+
+/* Style for each radio button label to look like a tab */
+.radio-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #e0e0e0; /* Light gray background for tabs */
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Hover effect on labels */
+.radio-label:hover {
+  background-color: #d4d4d4; /* Slightly darker on hover */
+}
+
+/* When the radio button is checked, change the style of the label */
+.student-label {
+  background-color: #e0e0e0;
+}
+.radioButton:checked + .student-label {
+  background-color: #FFAB0D; /* Active tab background color */
+  color: #fff; /* Active tab text color */
+  border: 2px solid #751807; /* Active tab border color */
+}
+
+.professor-label {
+  background-color: #e0e0e0;
+}
+.radioButton:checked + .professor-label {
+  background-color: #FFAB0D; /* Active tab background color */
+  color: #fff; /* Active tab text color */
+  border: 2px solid #751807; /* Active tab border color */
+}
+
+/* Hide the actual radio buttons */
+.radioButton {
+  display: none;
+}
+
+/* Username and password fields */
+.loggingInForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.loggingInForm input {
+  margin: 5px 0;
+  height: 4vh;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+form button {
+  background-color: #751807;
+  color: #FFAB0D;
+  text-align: center;
+  height: 6vh;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+  }
+
+  .big-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .main-content {
+    flex-direction: row;
+  }
+  
+  .profile-card {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .loginForm {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  form button {
+    width: 100%; /* Make sure the button spans the full width */
+  }
 }

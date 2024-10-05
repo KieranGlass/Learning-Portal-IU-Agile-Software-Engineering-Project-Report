@@ -1,20 +1,24 @@
 
-import './App.css'
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Student from './components/Student';
-import Professor from './components/Professor';
 import Header from './components/Header';
+import MainContent from './components/MainContent';
+import './App.css';
+
 
 function App() {
-  return (
+  const [showProfile, setShowProfile] = useState(false);
+  const [selectedRole, setSelectedRole] = useState(null);
 
+  return (
     <Router>
       <Header />
-      <Routes>
-          <Route path="Student" element={<Student />} />
-          <Route path="professor" element={<Professor />} />
-      </Routes>
+          <MainContent 
+            showProfile={showProfile}
+            setShowProfile={setShowProfile}
+            selectedRole={selectedRole}
+            setSelectedRole={setSelectedRole}
+          />
     </Router>
   );
 }

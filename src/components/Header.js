@@ -1,16 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+
+  const handleHomeClick = () => {
+    localStorage.removeItem('appState'); // Reset the app state
+    window.location.reload();
+  };
+
+  
   return (
     <header className="App-header">
-      <h1>Glass University</h1>
-      <nav>
-          <li><Link to="/student">Student</Link></li>
-          <li><Link to="/professor">Professor</Link></li> 
-      </nav>
+      <div className="header-content">
+        <button onClick={handleHomeClick}>
+          <FontAwesomeIcon icon={faHome} size="lg" />
+        </button>
+        <h1>Hogwarts Learning Portal</h1>
+        <img src={'./logo.jpg'} alt="Hogwarts Icon"/>
+      </div>
     </header>
   );
+  
 }
 
 export default Header;

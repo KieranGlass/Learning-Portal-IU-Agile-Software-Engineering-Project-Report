@@ -3,10 +3,11 @@ import ProfileCard from './ProfileCard';
 
 function ProfessorProfile() {
   const professorData = {
-    image: 'path/to/professor.jpg',
-    name: 'Jane Smith',
-    role: 'Professor',
-    bio: 'PhD in Computer Science with 10 years of teaching experience'
+    image: '/snape.jpg',
+    name: 'Severus Snape',
+    role: 'Professor, Head of House',
+    bio: 'Potions Master',
+    house: 'Slytherin'
   };
 
   return (
